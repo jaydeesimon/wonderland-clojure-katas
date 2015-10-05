@@ -41,7 +41,9 @@
       :else (winner-by-suit player1-card player2-card))))
 
 (defn- add-cards-to-bottom
-  "Adds cards to the bottom of the deck but shuffles them before adding"
+  "Adds cards to the bottom of the deck but shuffles them before adding.
+  If the cards are always added back to the winning deck in the same order,
+  then the game never ends."
   [deck & cards]
   (apply conj deck (shuffle cards)))
 
