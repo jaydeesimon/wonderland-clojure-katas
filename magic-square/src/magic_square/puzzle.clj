@@ -17,11 +17,11 @@
      (map #(nth %1 %2) partitioned (range (dec n) (dec 0) -1))]))
 
 (defn magic-square? [n values]
-  (let [group-nums (concat (rows n values)
+  (let [rows-cols-diags (concat (rows n values)
                            (cols n values)
                            (diags n values))
         sum (fn [l] (reduce + l))]
-    (apply = (map sum group-nums))))
+    (apply = (map sum rows-cols-diags))))
 
 (defn magic-square [values]
   (let [n 3]
