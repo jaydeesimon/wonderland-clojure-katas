@@ -18,8 +18,8 @@
 
 (defn magic-square? [n values]
   (let [rows-cols-diags (concat (rows n values)
-                           (cols n values)
-                           (diags n values))
+                                (cols n values)
+                                (diags n values))
         sum (fn [l] (reduce + l))]
     (apply = (map sum rows-cols-diags))))
 
