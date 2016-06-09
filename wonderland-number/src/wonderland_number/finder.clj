@@ -11,4 +11,7 @@
       {:n n :same-digits? (every? true? sd?)})))
 
 (defn wonderland-number []
-  (:n (first (filter :same-digits? (wonderland-number-candidates)))))
+  (->> (wonderland-number-candidates)
+       (filter :same-digits?)
+       (first)
+       :n))
